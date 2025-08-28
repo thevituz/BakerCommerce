@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lblMenu = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblDescricao = new System.Windows.Forms.Label();
             this.btnComandas = new System.Windows.Forms.Button();
             this.btnProdutos = new System.Windows.Forms.Button();
             this.btnCaixa = new System.Windows.Forms.Button();
@@ -48,14 +48,14 @@
             this.lblMenu.TabIndex = 0;
             this.lblMenu.Text = "Menu Principal";
             // 
-            // label1
+            // lblDescricao
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(405, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 26);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Olá Fulano da Silva,\r\nEscolha uma opção abaixo:";
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Location = new System.Drawing.Point(405, 81);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(138, 26);
+            this.lblDescricao.TabIndex = 1;
+            this.lblDescricao.Text = "Olá Fulano da Silva,\r\nEscolha uma opção abaixo:";
             // 
             // btnComandas
             // 
@@ -114,7 +114,7 @@
             this.Controls.Add(this.btnCaixa);
             this.Controls.Add(this.btnProdutos);
             this.Controls.Add(this.btnComandas);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.lblMenu);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -127,7 +127,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblMenu;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.Button btnComandas;
         private System.Windows.Forms.Button btnProdutos;
         private System.Windows.Forms.Button btnCaixa;
