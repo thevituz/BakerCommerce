@@ -63,7 +63,7 @@ namespace BakerCommerce.Model
             cmd.Parameters.AddWithValue("@nome_completo", NomeCompleto);
             cmd.Parameters.AddWithValue("@email", Email);
             // Obter o hash da senha:
-            string.hashsenha = EasyEncryption.SHA.ComputeSHA256Hash(Senha);
+            string hashsenha = EasyEncryption.SHA.ComputeSHA256Hash(Senha);
             cmd.Parameters.AddWithValue("@senha", hashsenha);
             // Obs.: Certifique-se de utilizar alguma método para obter o hash da senha antes de cadastrar!
             cmd.Prepare();

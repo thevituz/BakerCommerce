@@ -67,7 +67,7 @@ namespace BakerCommerce
 
                 {
 
-                    MessageBox.Show("E-mail e/ou senha inválidos!" "Erro!",
+                    MessageBox.Show("E-mail e/ou senha inválidos!", "Erro!",
 
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
 
