@@ -17,13 +17,19 @@ namespace BakerCommerce
         public Form1(Model.Usuario usuario)
         {
             InitializeComponent();
-            this.usuario = usuario;**
+            this.usuario = usuario;
             lblDescricao.Text = $"Olá {usuario.NomeCompleto}, \nEscolha uma opção abaixo:";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            FormUsuario formUsuario = new FormUsuario(usuario);
+            formUsuario.ShowDialog(); // Mostrar o form 
         }
     }
 }
