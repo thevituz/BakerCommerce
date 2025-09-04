@@ -1,6 +1,6 @@
 ﻿namespace BakerCommerce
 {
-    partial class FormUsuario
+    partial class FormUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.lblGerenciamento = new System.Windows.Forms.Label();
             this.dgvUsuario = new System.Windows.Forms.DataGridView();
             this.grbCadastrar = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             this.lblSenha = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
@@ -39,7 +39,7 @@
             this.txtEmailCadastro = new System.Windows.Forms.TextBox();
             this.txtNomeCadastro = new System.Windows.Forms.TextBox();
             this.grbEditar = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.txtSenhaEditar = new System.Windows.Forms.TextBox();
             this.textEmailEditar = new System.Windows.Forms.TextBox();
             this.txtNomeCompleto = new System.Windows.Forms.TextBox();
@@ -58,7 +58,7 @@
             // 
             this.lblGerenciamento.AutoSize = true;
             this.lblGerenciamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGerenciamento.Location = new System.Drawing.Point(237, 9);
+            this.lblGerenciamento.Location = new System.Drawing.Point(269, 9);
             this.lblGerenciamento.Name = "lblGerenciamento";
             this.lblGerenciamento.Size = new System.Drawing.Size(279, 25);
             this.lblGerenciamento.TabIndex = 0;
@@ -74,7 +74,7 @@
             // 
             // grbCadastrar
             // 
-            this.grbCadastrar.Controls.Add(this.button1);
+            this.grbCadastrar.Controls.Add(this.btnCadastrar);
             this.grbCadastrar.Controls.Add(this.lblSenha);
             this.grbCadastrar.Controls.Add(this.lblEmail);
             this.grbCadastrar.Controls.Add(this.lblNome);
@@ -88,15 +88,15 @@
             this.grbCadastrar.TabStop = false;
             this.grbCadastrar.Text = "Cadastrar";
             // 
-            // button1
+            // btnCadastrar
             // 
-            this.button1.Location = new System.Drawing.Point(6, 128);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(272, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.btnCadastrar.Location = new System.Drawing.Point(6, 128);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(272, 23);
+            this.btnCadastrar.TabIndex = 6;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // lblSenha
             // 
@@ -148,7 +148,7 @@
             // 
             // grbEditar
             // 
-            this.grbEditar.Controls.Add(this.button2);
+            this.grbEditar.Controls.Add(this.btnEditar);
             this.grbEditar.Controls.Add(this.txtSenhaEditar);
             this.grbEditar.Controls.Add(this.textEmailEditar);
             this.grbEditar.Controls.Add(this.txtNomeCompleto);
@@ -162,14 +162,14 @@
             this.grbEditar.TabStop = false;
             this.grbEditar.Text = "Editar";
             // 
-            // button2
+            // btnEditar
             // 
-            this.button2.Location = new System.Drawing.Point(6, 128);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(294, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Editar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEditar.Location = new System.Drawing.Point(6, 128);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(294, 23);
+            this.btnEditar.TabIndex = 7;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
             // 
             // txtSenhaEditar
             // 
@@ -238,7 +238,7 @@
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
             // 
-            // FormUsuario
+            // FormUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -248,7 +248,7 @@
             this.Controls.Add(this.grbCadastrar);
             this.Controls.Add(this.dgvUsuario);
             this.Controls.Add(this.lblGerenciamento);
-            this.Name = "FormUsuario";
+            this.Name = "FormUsuarios";
             this.Text = "FormUsuario";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).EndInit();
             this.grbCadastrar.ResumeLayout(false);
@@ -279,8 +279,8 @@
         private System.Windows.Forms.Label lblSenhaEditar;
         private System.Windows.Forms.Label lblEmailEditar;
         private System.Windows.Forms.Label lblNomeEditar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.GroupBox grbApagar;
         private System.Windows.Forms.Button btnApagar;
     }

@@ -40,9 +40,9 @@
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(434, 275);
+            this.btnEntrar.Location = new System.Drawing.Point(449, 275);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(230, 54);
+            this.btnEntrar.Size = new System.Drawing.Size(215, 54);
             this.btnEntrar.TabIndex = 0;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
@@ -61,9 +61,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BakerCommerce.Properties.Resources._4670536;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 58);
+            this.pictureBox1.Location = new System.Drawing.Point(49, 58);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(306, 271);
+            this.pictureBox1.Size = new System.Drawing.Size(292, 271);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -71,7 +71,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(446, 161);
+            this.lblEmail.Location = new System.Drawing.Point(446, 165);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(35, 13);
             this.lblEmail.TabIndex = 3;
@@ -80,7 +80,7 @@
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(446, 204);
+            this.lblSenha.Location = new System.Drawing.Point(446, 208);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(41, 13);
             this.lblSenha.TabIndex = 4;
@@ -88,14 +88,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(487, 158);
+            this.textBox1.Location = new System.Drawing.Point(487, 161);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(177, 20);
             this.textBox1.TabIndex = 5;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(487, 201);
+            this.textBox2.Location = new System.Drawing.Point(487, 204);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(177, 20);
             this.textBox2.TabIndex = 6;

@@ -42,7 +42,7 @@
             // 
             this.lblMenu.AutoSize = true;
             this.lblMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenu.Location = new System.Drawing.Point(39, 66);
+            this.lblMenu.Location = new System.Drawing.Point(79, 66);
             this.lblMenu.Name = "lblMenu";
             this.lblMenu.Size = new System.Drawing.Size(192, 31);
             this.lblMenu.TabIndex = 0;
@@ -51,7 +51,7 @@
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(405, 81);
+            this.lblDescricao.Location = new System.Drawing.Point(650, 83);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(138, 26);
             this.lblDescricao.TabIndex = 1;
@@ -59,27 +59,28 @@
             // 
             // btnComandas
             // 
-            this.btnComandas.Location = new System.Drawing.Point(319, 110);
+            this.btnComandas.Location = new System.Drawing.Point(347, 112);
             this.btnComandas.Name = "btnComandas";
-            this.btnComandas.Size = new System.Drawing.Size(224, 48);
+            this.btnComandas.Size = new System.Drawing.Size(441, 52);
             this.btnComandas.TabIndex = 2;
             this.btnComandas.Text = "Comandas";
             this.btnComandas.UseVisualStyleBackColor = true;
             // 
             // btnProdutos
             // 
-            this.btnProdutos.Location = new System.Drawing.Point(319, 164);
+            this.btnProdutos.Location = new System.Drawing.Point(347, 166);
             this.btnProdutos.Name = "btnProdutos";
-            this.btnProdutos.Size = new System.Drawing.Size(224, 43);
+            this.btnProdutos.Size = new System.Drawing.Size(441, 47);
             this.btnProdutos.TabIndex = 3;
             this.btnProdutos.Text = "Produtos";
             this.btnProdutos.UseVisualStyleBackColor = true;
+            this.btnProdutos.Click += new System.EventHandler(this.btnProdutos_Click);
             // 
             // btnCaixa
             // 
-            this.btnCaixa.Location = new System.Drawing.Point(319, 213);
+            this.btnCaixa.Location = new System.Drawing.Point(347, 215);
             this.btnCaixa.Name = "btnCaixa";
-            this.btnCaixa.Size = new System.Drawing.Size(224, 44);
+            this.btnCaixa.Size = new System.Drawing.Size(441, 48);
             this.btnCaixa.TabIndex = 4;
             this.btnCaixa.Text = "Caixa";
             this.btnCaixa.UseVisualStyleBackColor = true;
@@ -87,9 +88,9 @@
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Location = new System.Drawing.Point(319, 263);
+            this.btnUsuarios.Location = new System.Drawing.Point(347, 265);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(224, 47);
+            this.btnUsuarios.Size = new System.Drawing.Size(441, 51);
             this.btnUsuarios.TabIndex = 5;
             this.btnUsuarios.Text = "Usuários";
             this.btnUsuarios.UseVisualStyleBackColor = true;
@@ -98,9 +99,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BakerCommerce.Properties.Resources._4670536;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 110);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 112);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(278, 200);
+            this.pictureBox1.Size = new System.Drawing.Size(329, 204);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
