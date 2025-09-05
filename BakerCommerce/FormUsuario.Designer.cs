@@ -41,8 +41,8 @@
             this.grbEditar = new System.Windows.Forms.GroupBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.txtSenhaEditar = new System.Windows.Forms.TextBox();
-            this.textEmailEditar = new System.Windows.Forms.TextBox();
-            this.txtNomeCompleto = new System.Windows.Forms.TextBox();
+            this.txtEmailEditar = new System.Windows.Forms.TextBox();
+            this.txtNomeEditar = new System.Windows.Forms.TextBox();
             this.lblSenhaEditar = new System.Windows.Forms.Label();
             this.lblEmailEditar = new System.Windows.Forms.Label();
             this.lblNomeEditar = new System.Windows.Forms.Label();
@@ -150,8 +150,8 @@
             // 
             this.grbEditar.Controls.Add(this.btnEditar);
             this.grbEditar.Controls.Add(this.txtSenhaEditar);
-            this.grbEditar.Controls.Add(this.textEmailEditar);
-            this.grbEditar.Controls.Add(this.txtNomeCompleto);
+            this.grbEditar.Controls.Add(this.txtEmailEditar);
+            this.grbEditar.Controls.Add(this.txtNomeEditar);
             this.grbEditar.Controls.Add(this.lblSenhaEditar);
             this.grbEditar.Controls.Add(this.lblEmailEditar);
             this.grbEditar.Controls.Add(this.lblNomeEditar);
@@ -178,19 +178,19 @@
             this.txtSenhaEditar.Size = new System.Drawing.Size(100, 20);
             this.txtSenhaEditar.TabIndex = 8;
             // 
-            // textEmailEditar
+            // txtEmailEditar
             // 
-            this.textEmailEditar.Location = new System.Drawing.Point(97, 61);
-            this.textEmailEditar.Name = "textEmailEditar";
-            this.textEmailEditar.Size = new System.Drawing.Size(100, 20);
-            this.textEmailEditar.TabIndex = 7;
+            this.txtEmailEditar.Location = new System.Drawing.Point(97, 61);
+            this.txtEmailEditar.Name = "txtEmailEditar";
+            this.txtEmailEditar.Size = new System.Drawing.Size(100, 20);
+            this.txtEmailEditar.TabIndex = 7;
             // 
-            // txtNomeCompleto
+            // txtNomeEditar
             // 
-            this.txtNomeCompleto.Location = new System.Drawing.Point(97, 23);
-            this.txtNomeCompleto.Name = "txtNomeCompleto";
-            this.txtNomeCompleto.Size = new System.Drawing.Size(100, 20);
-            this.txtNomeCompleto.TabIndex = 6;
+            this.txtNomeEditar.Location = new System.Drawing.Point(97, 23);
+            this.txtNomeEditar.Name = "txtNomeEditar";
+            this.txtNomeEditar.Size = new System.Drawing.Size(100, 20);
+            this.txtNomeEditar.TabIndex = 6;
             // 
             // lblSenhaEditar
             // 
@@ -274,8 +274,8 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.TextBox txtSenhaEditar;
-        private System.Windows.Forms.TextBox textEmailEditar;
-        private System.Windows.Forms.TextBox txtNomeCompleto;
+        private System.Windows.Forms.TextBox txtEmailEditar;
+        private System.Windows.Forms.TextBox txtNomeEditar;
         private System.Windows.Forms.Label lblSenhaEditar;
         private System.Windows.Forms.Label lblEmailEditar;
         private System.Windows.Forms.Label lblNomeEditar;

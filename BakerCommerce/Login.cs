@@ -85,7 +85,7 @@ namespace BakerCommerce
                     usuario.NomeCompleto = resultado.Rows[0]["nome_completo"].ToString();
 
                     // Mudar para o MenuPrincipal
-                    Form1 menuPrincipal = new Form();
+                    Form1 menuPrincipal = new Form1(usuario);
                     Hide(); // esconder a janela atual
                     menuPrincipal.ShowDialog(); // mostrar o menuprincipal
                     Show(); // mostrar a tela de login ao sair do menu principal

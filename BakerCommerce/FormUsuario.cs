@@ -88,17 +88,17 @@ namespace BakerCommerce
             int ls = dgvUsuario.SelectedCells[0].RowIndex;
 
             // Colocar os valores das células no txbs de edição:
-            txtNomeEditar.Text = dgvUsuario.Rows[ls].Cells[1].Value.ToString();
-            txtEmailEditar.Text = dgvUsuario.Rows[ls].Cells[2].Value.ToString();
+            lblNomeEditar.Text = dgvUsuario.Rows[ls].Cells[1].Value.ToString();
+            lblEmailEditar.Text = dgvUsuario.Rows[ls].Cells[2].Value.ToString();
 
             // Armazenar o ID de quem foi selecionado:
-            idSelecionado = (int)dgvUsuarios.Rows[ls].Cells[0].Value;
+            idSelecionado = (int)dgvUsuario.Rows[ls].Cells[0].Value;
 
             // Ativar o grbEditar:
             grbEditar.Enabled = true;
 
             // Ajustes no grbApagar:
-            lblApagarDescricao.Text = $"Apagar: {dgvUsuario.Rows[ls].Cells[1].Value}";
+            btnApagar.Text = $"Apagar: {dgvUsuario.Rows[ls].Cells[1].Value}";
 
             // Ativar o grbApagar:
             grbApagar.Enabled = true;
@@ -132,7 +132,7 @@ namespace BakerCommerce
                     idSelecionado = 0;
 
                     // Retornar o texto padrão do "apagar":
-                    lblApagarDescricao.Text = "Selecione o usuário que deseja apagar.";
+                    btnApagar.Text = "Selecione o usuário que deseja apagar.";
 
                     // Desabilitar os grbs:
                     grbApagar.Enabled = false;

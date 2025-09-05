@@ -21,11 +21,6 @@ namespace BakerCommerce
             lblDescricao.Text = $"Olá {usuario.NomeCompleto}, \nEscolha uma opção abaixo:";
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             FormUsuarios formUsuario = new FormUsuarios(usuario);
@@ -36,6 +31,11 @@ namespace BakerCommerce
         {
             FormProdutos formProdutos = new FormProdutos(usuario);
             formProdutos.ShowDialog();
+        }
+
+        private void btnCaixa_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
