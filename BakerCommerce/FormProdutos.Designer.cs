@@ -30,12 +30,12 @@
         {
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.grbCadastrar = new System.Windows.Forms.GroupBox();
+            this.txbNomeCadastro = new System.Windows.Forms.TextBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.cmbCategoriaCadastro = new System.Windows.Forms.ComboBox();
             this.lblCategoriaCadastro = new System.Windows.Forms.Label();
             this.txtPrecoCadastro = new System.Windows.Forms.TextBox();
             this.lblPreco = new System.Windows.Forms.Label();
-            this.txtNomeCadastro = new System.Windows.Forms.TextBox();
             this.lblNomeCadastro = new System.Windows.Forms.Label();
             this.grbEditar = new System.Windows.Forms.GroupBox();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -63,12 +63,12 @@
             // 
             // grbCadastrar
             // 
+            this.grbCadastrar.Controls.Add(this.txbNomeCadastro);
             this.grbCadastrar.Controls.Add(this.btnCadastrar);
             this.grbCadastrar.Controls.Add(this.cmbCategoriaCadastro);
             this.grbCadastrar.Controls.Add(this.lblCategoriaCadastro);
             this.grbCadastrar.Controls.Add(this.txtPrecoCadastro);
             this.grbCadastrar.Controls.Add(this.lblPreco);
-            this.grbCadastrar.Controls.Add(this.txtNomeCadastro);
             this.grbCadastrar.Controls.Add(this.lblNomeCadastro);
             this.grbCadastrar.Location = new System.Drawing.Point(139, 259);
             this.grbCadastrar.Name = "grbCadastrar";
@@ -76,6 +76,13 @@
             this.grbCadastrar.TabIndex = 1;
             this.grbCadastrar.TabStop = false;
             this.grbCadastrar.Text = "Cadastrar";
+            // 
+            // txbNomeCadastro
+            // 
+            this.txbNomeCadastro.Location = new System.Drawing.Point(72, 18);
+            this.txbNomeCadastro.Name = "txbNomeCadastro";
+            this.txbNomeCadastro.Size = new System.Drawing.Size(136, 20);
+            this.txbNomeCadastro.TabIndex = 7;
             // 
             // btnCadastrar
             // 
@@ -85,6 +92,7 @@
             this.btnCadastrar.TabIndex = 6;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click1);
             // 
             // cmbCategoriaCadastro
             // 
@@ -118,13 +126,6 @@
             this.lblPreco.Size = new System.Drawing.Size(38, 13);
             this.lblPreco.TabIndex = 2;
             this.lblPreco.Text = "Preço:";
-            // 
-            // txtNomeCadastro
-            // 
-            this.txtNomeCadastro.Location = new System.Drawing.Point(72, 15);
-            this.txtNomeCadastro.Name = "txtNomeCadastro";
-            this.txtNomeCadastro.Size = new System.Drawing.Size(136, 20);
-            this.txtNomeCadastro.TabIndex = 1;
             // 
             // lblNomeCadastro
             // 
@@ -270,5 +271,6 @@
         private System.Windows.Forms.Label lblNomeEditar;
         private System.Windows.Forms.GroupBox grbApagar;
         private System.Windows.Forms.Button btnApagar;
+        private System.Windows.Forms.TextBox txbNomeCadastro;
     }
 }

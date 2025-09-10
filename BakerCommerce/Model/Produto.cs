@@ -13,45 +13,40 @@ namespace BakerCommerce.Model
         public int Id { get; set; }
         public string Nome { get; set; }
         public double Preco { get; set; }
+        public int IdCategoria { get; set; }
+        public int IdRespCadastro { get; set; }
 
-        public int IdCategoria { get; set; }     // chave da Categoria
-        public int IdRespCadastro { get; set; }  // chave do Usuário logado (quem cadastrou)
-
-        // LISTAR TODOS OS PRODUTOS
-        public DataTable Listar()
+        public DataTable ListarProdutos() //Método de listagem (SELECT)
         {
-            string comando = @"SELECT p.id, p.nome, p.preco, c.nome AS categoria, u.nome_completo AS responsavel
-                               FROM produtos p
-                               INNER JOIN categorias c ON p.id_categoria = c.id
-                               INNER JOIN usuarios u ON p.id_resp_cadastro = u.id";
+            string comando = "SELECT * FROM produtos";
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
+
             cmd.Prepare();
 
             DataTable tabela = new DataTable();
-            tabela.Load(cmd.ExecuteReader());
 
+            tabela.Load(cmd.ExecuteReader());
             conexaoBD.Desconectar(con);
+
             return tabela;
         }
 
-        // CADASTRAR NOVO PRODUTO
-        public bool Cadastrar()
+        public bool CadastrarProduto()
         {
-            string comando = @"INSERT INTO produtos (nome, preco, id_categoria, id_resp_cadastro) 
-                               VALUES (@nome, @preco, @id_categoria, @id_resp_cadastro)";
+            string comando = "INSERT INTO produtos (nome, preco, id_categoria, id_respcadastro) " +
+                             "VALUES (@nome, @preco, @id_categoria, @id_respcadastro)"; //Comando SQL INSERT
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
 
-            // Passando parâmetros
             cmd.Parameters.AddWithValue("@nome", Nome);
             cmd.Parameters.AddWithValue("@preco", Preco);
             cmd.Parameters.AddWithValue("@id_categoria", IdCategoria);
-            cmd.Parameters.AddWithValue("@id_resp_cadastro", IdRespCadastro);
+            cmd.Parameters.AddWithValue("@id_respcadastro", IdRespCadastro);
 
             cmd.Prepare();
 
@@ -62,43 +57,11 @@ namespace BakerCommerce.Model
                     conexaoBD.Desconectar(con);
                     return false;
                 }
-                conexaoBD.Desconectar(con);
-                return true;
-            }
-            catch
-            {
-                conexaoBD.Desconectar(con);
-                return false;
-            }
-        }
-
-        // MODIFICAR PRODUTO
-        public bool Modificar()
-        {
-            string comando = @"UPDATE produtos 
-                               SET nome = @nome, preco = @preco, id_categoria = @id_categoria
-                               WHERE id = @id";
-
-            Banco conexaoBD = new Banco();
-            MySqlConnection con = conexaoBD.ObterConexao();
-            MySqlCommand cmd = new MySqlCommand(comando, con);
-
-            cmd.Parameters.AddWithValue("@nome", Nome);
-            cmd.Parameters.AddWithValue("@preco", Preco);
-            cmd.Parameters.AddWithValue("@id_categoria", IdCategoria);
-            cmd.Parameters.AddWithValue("@id", Id);
-
-            cmd.Prepare();
-
-            try
-            {
-                if (cmd.ExecuteNonQuery() == 0)
+                else
                 {
                     conexaoBD.Desconectar(con);
-                    return false;
+                    return true;
                 }
-                conexaoBD.Desconectar(con);
-                return true;
             }
             catch
             {
@@ -107,10 +70,9 @@ namespace BakerCommerce.Model
             }
         }
 
-        // APAGAR PRODUTO
-        public bool Apagar()
+        public bool ApagarProduto()
         {
-            string comando = "DELETE FROM produtos WHERE id = @id";
+            string comando = "DELETE FROM produtos WHERE id = @id"; //Comando SQL DELETE
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
@@ -126,8 +88,49 @@ namespace BakerCommerce.Model
                     conexaoBD.Desconectar(con);
                     return false;
                 }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            catch
+            {
                 conexaoBD.Desconectar(con);
-                return true;
+                return false;
+            }
+        }
+
+        public bool EditarProduto()
+        {
+            string comando = "UPDATE produtos SET nome = @nome, preco = @preco, " +
+                             "id_categoria = @id_categoria, id_respcadastro = @id_respcadastro " +
+                             "WHERE id = @id"; //Comando SQL UPDATE
+
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Parameters.AddWithValue("@id", Id);
+            cmd.Parameters.AddWithValue("@nome", Nome);
+            cmd.Parameters.AddWithValue("@preco", Preco);
+            cmd.Parameters.AddWithValue("@id_categoria", IdCategoria);
+            cmd.Parameters.AddWithValue("@id_respcadastro", IdRespCadastro);
+
+            cmd.Prepare();
+
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
             }
             catch
             {

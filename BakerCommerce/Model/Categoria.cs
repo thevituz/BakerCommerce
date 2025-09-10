@@ -13,17 +13,22 @@ namespace BakerCommerce.Model
         public int Id { get; set; }
         public string Nome { get; set; }
 
-        public DataTable Listar()
+        public DataTable ListarCategoria() //Método de listagem (SELECT)
         {
-            string comando = "SELECT * From categorias";
+            string comando = "SELECT id AS 'Id', nome AS 'Categoria' FROM categorias";
+
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
+
             cmd.Prepare();
+
             DataTable tabela = new DataTable();
+
             tabela.Load(cmd.ExecuteReader());
             conexaoBD.Desconectar(con);
-            return tabela;
+
+            return (tabela);
         }
     }
 }

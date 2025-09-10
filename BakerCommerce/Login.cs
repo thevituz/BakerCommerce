@@ -53,9 +53,9 @@ namespace BakerCommerce
 
                 // Colocar os valores dos campos nos atributos do usuário:
 
-                usuario.Email = lblEmail.Text;
+                usuario.Email = txbEmail.Text;
 
-                usuario.Senha = lblSenha.Text;
+                usuario.Senha = txbSenha.Text;
 
                 // Tabela que vai receber o resultado do SELECT (Logar)
 
