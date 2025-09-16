@@ -253,5 +253,9 @@ namespace BakerCommerce
             }
         }
 
+        private void btnApagar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

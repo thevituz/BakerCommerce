@@ -196,7 +196,7 @@ namespace BakerCommerce.Model
 
         internal object Listar()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
