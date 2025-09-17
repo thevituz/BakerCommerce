@@ -45,8 +45,8 @@ namespace BakerCommerce.Model
         // Cadastrar (Insert na view_fichas)
         public bool Cadastrar()
         {
-            string comando = "INSERT INTO ordens_comandas (id_ficha, id_produto, quantidade) " +
-                             "VALUES (@id_fica, @id_produto, @quantidade, @id_resp)"; //Comando SQL INSERT
+            string comando = "INSERT INTO ordens_comandas (id_ficha, id_produto, quantidade, id_resp) " +
+                             "VALUES (@id_ficha, @id_produto, @quantidade, @id_resp)"; //Comando SQL INSERT
 
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
@@ -98,7 +98,7 @@ namespace BakerCommerce.Model
 
         public bool EncerrarComanda()
         {
-            string comando = "UPDATE ordens_comandas SET situacao = 0" +
+            string comando = "UPDATE ordens_comandas SET situacao = 0 " +
                 "WHERE id_ficha = @id_ficha AND situacao = 1";
 
             Banco conexaoBD = new Banco();

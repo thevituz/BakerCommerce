@@ -36,7 +36,7 @@ namespace BakerCommerce
         {
             int ls = dgvProdutos.SelectedCells[0].RowIndex;
             // Colocar ID do produto no campo do código:
-            txtProduto.Text = dgvProdutos.Rows[ls].Cells[0].Value.ToString();
+            txtCodProduto.Text = dgvProdutos.Rows[ls].Cells[0].Value.ToString();
             // Colocar o nome do produto no campo informações:
             txtProduto.Text = dgvProdutos.Rows[ls].Cells[1].Value.ToString();
         }
@@ -57,7 +57,7 @@ namespace BakerCommerce
             else
             {
                 grbInformações.Enabled = false;
-                grbLançamento.Enabled = false;
+                grbLançamento.Enabled = true;
             }
         }
 
@@ -73,8 +73,8 @@ namespace BakerCommerce
             {
                 Model.OrdemComanda ordemComanda = new Model.OrdemComanda();
                 ordemComanda.IdFicha = int.Parse(txtComanda.Text);
-                ordemComanda.IdFicha = int.Parse(txtCodProduto.Text);
-                ordemComanda.IdFicha = int.Parse(txtQuantidade.Text);
+                ordemComanda.IdProduto = int.Parse(txtCodProduto.Text);
+                ordemComanda.Quantidade = int.Parse(txtQuantidade.Text);
                 ordemComanda.IdResp = Usuario.Id;
 
                 if (ordemComanda.Cadastrar())

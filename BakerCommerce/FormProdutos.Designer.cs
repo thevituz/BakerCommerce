@@ -46,7 +46,7 @@
             this.txtNomeEditar = new System.Windows.Forms.TextBox();
             this.lblNomeEditar = new System.Windows.Forms.Label();
             this.grbApagar = new System.Windows.Forms.GroupBox();
-            this.btnApagar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.grbCadastrar.SuspendLayout();
             this.grbEditar.SuspendLayout();
@@ -160,6 +160,7 @@
             this.btnEditar.TabIndex = 6;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // cmbCategoriaEditar
             // 
@@ -212,7 +213,7 @@
             // 
             // grbApagar
             // 
-            this.grbApagar.Controls.Add(this.btnApagar);
+            this.grbApagar.Controls.Add(this.btnExcluir);
             this.grbApagar.Location = new System.Drawing.Point(139, 401);
             this.grbApagar.Name = "grbApagar";
             this.grbApagar.Size = new System.Drawing.Size(483, 44);
@@ -220,15 +221,15 @@
             this.grbApagar.TabStop = false;
             this.grbApagar.Text = "Apagar";
             // 
-            // btnApagar
+            // btnExcluir
             // 
-            this.btnApagar.Location = new System.Drawing.Point(255, 13);
-            this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(222, 25);
-            this.btnApagar.TabIndex = 0;
-            this.btnApagar.Text = "Apagar";
-            this.btnApagar.UseVisualStyleBackColor = true;
-            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
+            this.btnExcluir.Location = new System.Drawing.Point(255, 13);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(222, 25);
+            this.btnExcluir.TabIndex = 0;
+            this.btnExcluir.Text = "Apagar";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // FormProdutos
             // 
@@ -271,7 +272,7 @@
         private System.Windows.Forms.TextBox txtNomeEditar;
         private System.Windows.Forms.Label lblNomeEditar;
         private System.Windows.Forms.GroupBox grbApagar;
-        private System.Windows.Forms.Button btnApagar;
+        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.TextBox txbNomeCadastro;
     }
 }

@@ -194,9 +194,18 @@ namespace BakerCommerce.Model
             }
         }
 
-        internal object Listar()
+        public DataTable Listar()
         {
-            
+            string comando = "SELECT id,nome_completo,email FROM usuarios";
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+            cmd.Prepare();
+            DataTable tabela = new DataTable();
+            tabela.Load(cmd.ExecuteReader());
+            conexaoBD.Desconectar(con);
+            return tabela;
         }
+
     }
 }

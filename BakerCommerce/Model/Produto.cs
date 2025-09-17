@@ -136,8 +136,9 @@ namespace BakerCommerce.Model
             {
                 conexaoBD.Desconectar(con);
                 return false;
-            }
+            } 
         }
+
     }
 }
 

@@ -146,5 +146,49 @@ namespace BakerCommerce
 
             }
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            // Validar campos:
+            if (txtNomeCadastro.Text.Length < 5)
+            {
+                MessageBox.Show("O nome deve ter no minimo 5 caracteres.",
+                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else if (txtEmailCadastro.Text.Length < 7) // a@a.co
+            {
+                MessageBox.Show("O email deve ter no minimo 7 caracteres.",
+                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txtSenhaCadastro.Text.Length < 6)
+            {
+                MessageBox.Show("O Senha deve ter no minimo 6 caracteres.",
+                     "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                // Prosseguir com a edição:
+                Model.Usuario usuarioEditar = new Model.Usuario();
+                usuarioEditar.Id = idSelecionado;
+                usuarioEditar.NomeCompleto = txtNomeEditar.Text;
+                usuarioEditar.Email = txtEmailEditar.Text;
+                usuarioEditar.Senha = txtSenhaEditar.Text;
+
+                if (usuarioEditar.Editar())
+                {
+                    MessageBox.Show("Usuario modificado com sucesso!", "Show!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+
+                }
+                else
+                {
+                    MessageBox.Show("Falha em modificar o usuário!",
+                       "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
     }
 }

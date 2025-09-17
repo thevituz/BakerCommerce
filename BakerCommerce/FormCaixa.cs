@@ -20,8 +20,39 @@ namespace BakerCommerce
 
         private void btnListar_Click(object sender, EventArgs e)
         {
+            // Verificar se o campo está vazio:
+            if (txtComanda.Text.Length == 0)
+            {
+                MessageBox.Show("Imforme o número da comanda!", "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Model.OrdemComanda ordemComanda = new Model.OrdemComanda();
+                ordemComanda.IdFicha = int.Parse(txtComanda.Text);
 
+                //Tabela para receber o resutado da consulta SELECT
+                DataTable resultado = ordemComanda.BuscarPorFicha();
+
+                // verificar se exitem linhas em, "resultado":
+                if (resultado.Rows.Count > 0)
+                {
+                    //Mostrar no dgv:
+                    dgvItens.DataSource = resultado;
+                    // Calcular o total e mostrar no lblTotal:
+                    lblTotalValor.Text = "R$" + resultado.Compute("Sum(Total_Item)", "True").ToString();
+                }
+                else
+                {
+                    //Limpar o dgv:
+                    dgvItens.DataSource = null;
+                    // Mostrar mensagem de erro:
+                    MessageBox.Show("Não existem lançamentos nessa comanda!", "Atenção",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
+        
 
         private void chkPagamentoRecebido_CheckedChanged(object sender, EventArgs e)
         {
@@ -54,7 +85,7 @@ namespace BakerCommerce
                     MessageBox.Show("Falha ao encessar a comanda!",
                         "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
+                
             }
         }
     }

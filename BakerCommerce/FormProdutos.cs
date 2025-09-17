@@ -25,9 +25,9 @@ namespace BakerCommerce
             ListarProdutos();
         }
 
-        
+
         // LISTAR CATEGORIAS NO COMBOBOX
-        
+
         public void ListarCategoriasCmb()
         {
             Model.Categoria categoria = new Model.Categoria();
@@ -44,9 +44,9 @@ namespace BakerCommerce
             }
         }
 
-       
+
         // LISTAR PRODUTOS NO DATAGRIDVIEW
-        
+
         public void ListarProdutos()
         {
             Model.Produto produto = new Model.Produto();
@@ -62,9 +62,9 @@ namespace BakerCommerce
             dgvProdutos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        
+
         // CADASTRAR PRODUTO
-        
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             if (txbNomeCadastro.Text.Trim() == "" || txtPrecoCadastro.Text.Trim() == "" || cmbCategoriaCadastro.SelectedIndex == -1)
@@ -108,9 +108,9 @@ namespace BakerCommerce
             cmbCategoriaCadastro.SelectedIndex = -1;
         }
 
-        
+
         // SELECIONAR PRODUTO PARA EDIÇÃO
-        
+
         private void dgvProdutos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int ls = dgvProdutos.SelectedCells[0].RowIndex;
@@ -126,15 +126,15 @@ namespace BakerCommerce
             grbEditar.Enabled = true;
 
             // Ajustes no grbApagar:
-            btnApagar.Text = $"Apagar: {dgvProdutos.Rows[ls].Cells[1].Value}";
+            btnExcluir.Text = $"Apagar: {dgvProdutos.Rows[ls].Cells[1].Value}";
 
             // Ativar o grbApagar:
             grbApagar.Enabled = true;
         }
 
-        
+
         // EDITAR PRODUTO
-        
+
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (idSelecionado == 0)
@@ -172,53 +172,21 @@ namespace BakerCommerce
 
         private void LimparCamposEdicao()
         {
-           
+
             txtNomeEditar.Clear();
             txtPrecoEditar.Clear();
             cmbCategoriaEditar.SelectedIndex = -1;
         }
 
-        
+
         // EXCLUIR PRODUTO
-       
+
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (idSelecionado == 0)
-            {
-                MessageBox.Show("Selecione um produto para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
-            DialogResult confirm = MessageBox.Show("Tem certeza que deseja excluir este produto?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (confirm == DialogResult.Yes)
-            {
-                try
-                {
-                    Model.Produto produto = new Model.Produto
-                    {
-                        Id = idSelecionado,
-                    };
-
-                    if (produto.ApagarProduto())
-                    {
-                        MessageBox.Show("Produto excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LimparCamposEdicao();
-                        ListarProdutos();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Erro ao excluir produto.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
         }
 
-            private void btnCadastrar_Click1(object sender, EventArgs e)
+        private void btnCadastrar_Click1(object sender, EventArgs e)
         {
             if (txbNomeCadastro.Text.Trim() == "" || txtPrecoCadastro.Text.Trim() == "" || cmbCategoriaCadastro.SelectedIndex == -1)
             {
@@ -255,7 +223,41 @@ namespace BakerCommerce
 
         private void btnApagar_Click(object sender, EventArgs e)
         {
+            {
+                if (idSelecionado == 0)
+                {
+                    MessageBox.Show("Selecione um produto para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                DialogResult confirm = MessageBox.Show("Tem certeza que deseja excluir este produto?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (confirm == DialogResult.Yes)
+                {
+                    try
+                    {
+                        Model.Produto produto = new Model.Produto
+                        {
+                            Id = idSelecionado,
+                        };
+
+                        if (produto.ApagarProduto())
+                        {
+                            MessageBox.Show("Produto excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LimparCamposEdicao();
+                            ListarProdutos();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro ao excluir produto.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }
